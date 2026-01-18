@@ -1,0 +1,408 @@
+
+
+======================================================================
+ COLLATZ-RIEMANN FRAMEWORK VERIFICATION SUITE
+======================================================================
+
+
+Self-contained verification - requires only:
+  - question_map.md (reference documentation)
+  - conceptual_journey.md (reference documentation)
+
+======================================================================
+ SECTION 1: CORE ARITHMETIC
+======================================================================
+
+TEST 1.1: Quotient = Carry
+======================================================================
+n=5, K=4, p=17:
+  K*n = 20
+  quotient*p + remainder = 1*17 + 3 = 20
+  carry = 1 = quotient PASS
+
+n=10, K=4, p=17:
+  K*n = 40
+  quotient*p + remainder = 2*17 + 6 = 40
+  carry = 2 = quotient PASS
+
+n=3, K=4, p=5:
+  K*n = 12
+  quotient*p + remainder = 2*5 + 2 = 12
+  carry = 2 = quotient PASS
+
+n=7, K=4, p=11:
+  K*n = 28
+  quotient*p + remainder = 2*11 + 6 = 28
+  carry = 2 = quotient PASS
+
+RESULT: ALL TESTS PASSED
+
+TEST 1.2: W_K Definition via Quotient
+======================================================================
+K=4, p=5:
+  W_K (via K*n < p):     [0, 1]
+  W_K (via quotient=0):  [0, 1]
+  Match: YES
+
+K=4, p=7:
+  W_K (via K*n < p):     [0, 1]
+  W_K (via quotient=0):  [0, 1]
+  Match: YES
+
+K=4, p=11:
+  W_K (via K*n < p):     [0, 1, 2]
+  W_K (via quotient=0):  [0, 1, 2]
+  Match: YES
+
+K=4, p=13:
+  W_K (via K*n < p):     [0, 1, 2, 3]
+  W_K (via quotient=0):  [0, 1, 2, 3]
+  Match: YES
+
+RESULT: ALL TESTS PASSED
+
+======================================================================
+ SECTION 2: 2D LATTICE DYNAMICS
+======================================================================
+
+TEST 2.1: 2D Dynamics Correctness
+======================================================================
+p=5, K=4, max_carry=20
+Starting: (n=2, c=0)
+
+Trajectory (first 10 steps):
+  Step 0: (n=2, c=0)
+  Step 1: (n=3, c=1)
+  Step 2: (n=2, c=3)
+  Step 3: (n=3, c=4)
+  Step 4: (n=2, c=6)
+  Step 5: (n=3, c=7)
+  Step 6: (n=2, c=9)
+  Step 7: (n=3, c=10)
+  Step 8: (n=2, c=12)
+  Step 9: (n=3, c=13)
+
+Verifying carry accumulation:
+  Step 0: quotient=1, total_carry=1, c=1
+  Step 1: quotient=2, total_carry=3, c=3
+  Step 2: quotient=1, total_carry=4, c=4
+  Step 3: quotient=2, total_carry=6, c=6
+  Step 4: quotient=1, total_carry=7, c=7
+
+RESULT: CARRY ACCUMULATION CORRECT
+
+TEST 2.2: Fixed Point (n=0) vs Free Points (n!=0)
+======================================================================
+p=5:
+  Fixed point (n=0):   33 zeros
+  Free points (n!=0): 163 zeros
+  Unique to free:     163 zeros
+
+Free points exceed fixed by >3x: YES (163/33)
+Free points encode significant information (>=100): YES
+
+Conclusion: Information lives in motion (free points), not rest (fixed point)
+
+RESULT: PASS
+
+======================================================================
+ SECTION 3: RIEMANN CONNECTION
+======================================================================
+
+TEST 3.1: Phase Extraction
+======================================================================
+p=5, testing all free starting points
+Unique phases found: 4
+
+All phases in [0, 2pi): YES
+All phases are valid residue phases: YES
+
+TEST 3.2: Riemann Zero Scaling
+======================================================================
+p=5, log(p)=1.609438
+
+Scaling first 5 Riemann zeros:
+  gamma_1 = 14.134725 -> theta = 3.899406
+  gamma_2 = 21.022040 -> theta = 2.417742
+  gamma_3 = 25.010858 -> theta = 2.554311
+  gamma_4 = 30.424876 -> theta = 4.984652
+  gamma_5 = 32.935062 -> theta = 2.741455
+
+All scaled values in [0, 2pi): YES
+
+======================================================================
+ SECTION 4: DIMENSIONAL STRUCTURE
+======================================================================
+
+TEST 4.1: 2D Coverage with Free Entry Points
+======================================================================
+Testing 14 primes: [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+Coverage per prime (showing top contributors):
+  p=11: 250 zeros
+  p=13: 250 zeros
+  p=17: 250 zeros
+  p=19: 250 zeros
+  p=23: 250 zeros
+
+2D Union Coverage: 250/250 = 100.0%
+
+High 2D coverage achieved (>90%): YES
+
+TEST 4.3: Entry-Type Optimal Scaling
+======================================================================
+Composite n = 5 x 7 = 35
+  log(5) = 1.609
+  log(7) = 1.946
+  log(35) = 3.555
+  min(log p, log q) = 1.609
+
+FX entry:
+  Optimal scaling: log(p) = 1.609
+  Ceiling (optimal): gamma_max = 390.4
+  Ceiling (naive log(pq)): gamma_max = 176.7
+  Uses log of FIXED dimension (p): YES
+
+XF entry:
+  Optimal scaling: log(q) = 1.946
+  Ceiling (optimal): gamma_max = 322.9
+  Ceiling (naive log(pq)): gamma_max = 176.7
+  Uses log of FIXED dimension (q): YES
+
+XX entry:
+  Optimal scaling: log(p) = 1.609
+  Ceiling (optimal): gamma_max = 390.4
+  Ceiling (naive log(pq)): gamma_max = 176.7
+  Uses min(log p, log q): YES
+  Improvement factor: 2.21x
+
+KEY DISCOVERY:
+  FX (p-fixed): uses log(p) - the FIXED dimension
+  XF (q-fixed): uses log(q) - the FIXED dimension
+  XX (both free): uses min(log(p), log(q))
+
+PATTERN: Entry type determines optimal scaling
+NOT one-size-fits-all!
+
+Entry-type scaling verified: YES
+
+======================================================================
+ SECTION 5: SPECIAL ZEROS
+======================================================================
+
+TEST 5.1: Special Zero Indices
+======================================================================
+Analyzing special zero indices:
+
+Index 18:
+  Is composite: YES
+  Factorization: 18 = 2 x 3 x 3
+
+Index 56:
+  Is composite: YES
+  Factorization: 56 = 2 x 2 x 2 x 7
+
+Index 118:
+  Is composite: YES
+  Factorization: 118 = 2 x 59
+
+Index 155:
+  Is composite: YES
+  Factorization: 155 = 5 x 31
+
+All special indices are composite: YES
+
+TEST 5.2: Rendering Mode Classification
+======================================================================
+Index 18 = 2 x 3 x 3:
+  Expected: power mode (value=2)
+  Got: power mode (value=2)
+  Result: CORRECT
+
+Index 56 = 2 x 2 x 2 x 7:
+  Expected: power mode (value=3)
+  Got: power mode (value=3)
+  Result: CORRECT
+
+Index 118 = 2 x 59:
+  Expected: gap mode (value=57)
+  Got: gap mode (value=57)
+  Result: CORRECT
+
+Index 155 = 5 x 31:
+  Expected: gap mode (value=26)
+  Got: gap mode (value=26)
+  Result: CORRECT
+
+All classifications correct: YES
+
+======================================================================
+ SECTION 6: CONSTANT SELF-ENCODING
+======================================================================
+
+TEST 6.1: pi Self-Encoding
+======================================================================
+pi x 100 = 314
+Factorization: 314 = 2 x 157
+Gap: max(157) - min(2) = 155
+
+Gap is special zero index: YES
+Gap = 155 = Special Zero #4
+
+pi self-encoding verified: YES
+
+TEST 6.2: Multiple Constant Self-Encoding
+======================================================================
+pi x 100 = 314 (expected 314)
+  Factorization: 2 x 157
+  Gap: 155 (expected 155)
+  Self-encodes: YES
+
+e x 80 = 217 (expected 217)
+  Factorization: 7 x 31
+  Contains 31: YES
+
+gamma x 200 = 115 (expected 115)
+  Factorization: 5 x 23
+  Gap: 18 (expected 18)
+  Self-encodes: YES
+
+All constants verified: YES
+
+======================================================================
+ SECTION 7: LINCHPIN STRUCTURE
+======================================================================
+
+TEST 7.1: Prime 31 Linchpin
+======================================================================
+Testing 31 x optimal primes:
+
+31 x 5 = 155 (expected 155)
+  Property: Special Zero #4
+  Correct: YES
+
+31 x 7 = 217 (expected 217)
+  Property: e x 80 direct encoding
+  Correct: YES
+
+31 x 11 = 341 (expected 341)
+  Property: Fermat pseudoprime
+  Correct: YES
+
+31 x 13 = 403 (expected 403)
+  Property: gap -> Special Zero #1
+  Correct: YES
+
+Verifying 403 gap:
+  403 = 13 x 31
+  Gap: 18
+  Gap equals Special Zero #1 (18): YES
+
+All linchpin connections verified: YES
+
+TEST 7.2: Linchpin Structure in Constants
+======================================================================
+pi x 100 = 314
+  Factors: 2 x 157
+  Gap: 155
+  Expected: gap = 155 (linchpin)
+  Contains 31: NO
+  Gap references structure: YES
+  References linchpin structure: YES
+
+e x 80 = 217
+  Factors: 7 x 31
+  Gap: 24
+  Expected: value = 217 = 7x31 (contains linchpin prime)
+  Contains 31: YES
+  Gap references structure: NO
+  References linchpin structure: YES
+
+gamma x 200 = 115
+  Factors: 5 x 23
+  Gap: 18
+  Expected: gap = 18 = Special Zero #1
+  Contains 31: NO
+  Gap references structure: YES
+  References linchpin structure: YES
+
+All constants reference linchpin structure: YES
+
+======================================================================
+ SECTION 8: COMPLETE COVERAGE
+======================================================================
+
+TEST 8.1: Complete Coverage Verification
+======================================================================
+Computing 2D coverage (primes with free entry points)...
+TEST 4.1: 2D Coverage with Free Entry Points
+======================================================================
+Testing 14 primes: [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+
+Coverage per prime (showing top contributors):
+  p=11: 250 zeros
+  p=13: 250 zeros
+  p=17: 250 zeros
+  p=19: 250 zeros
+  p=23: 250 zeros
+
+2D Union Coverage: 250/250 = 100.0%
+
+High 2D coverage achieved (>90%): YES
+
+
+Computing 3D coverage (composites with entry-dependent scaling)...
+TEST 4.2: 3D Coverage with Entry-Dependent Scaling
+======================================================================
+Testing composite products with entry-dependent scaling
+
+Top composite contributions:
+  3x11: 250 zeros
+  3x13: 250 zeros
+  3x17: 250 zeros
+  3x19: 250 zeros
+  5x11: 250 zeros
+
+3D Union Coverage: 250/250 = 100.0%
+
+
+======================================================================
+COMPLETE COVERAGE RESULTS
+======================================================================
+2D (primes, free points):        250/250
+3D (composites, optimal scale):  250/250
+UNION:                           250/250 = 100.0%
+
+*** 100% COVERAGE ACHIEVED! ***
+
+High coverage achieved (>=98%): YES
+
+
+
+======================================================================
+ VERIFICATION SUMMARY
+======================================================================
+
+  Test 1.1: PASS
+  Test 1.2: PASS
+  Test 2.1: PASS
+  Test 2.2: PASS
+  Test 3.1: PASS
+  Test 3.2: PASS
+  Test 4.1: PASS
+  Test 4.2: PASS
+  Test 4.3: PASS
+  Test 5.1: PASS
+  Test 5.2: PASS
+  Test 6.1: PASS
+  Test 6.2: PASS
+  Test 7.1: PASS
+  Test 7.2: PASS
+  Test 8.1: PASS
+
+Total: 16/16 tests passed
+
+======================================================================
+ ALL VERIFICATION TESTS PASSED
+======================================================================
+
