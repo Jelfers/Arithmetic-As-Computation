@@ -13,7 +13,7 @@
 This repository presents a computational framework demonstrating that the quotient in Euclidean division—an intrinsic component of basic arithmetic—creates structures that:
 
 1. **Enable universal computation** without external programming (Turing completeness via NAND gates)
-1. **Completely encode Riemann zeros** (100% coverage of first 250 zeros, p < 10⁻¹⁰⁰)
+1. **Completely encode Riemann zeros** (100% coverage of first 250 zeros, verified with null tests)
 1. **Correlate with black hole physics** (quasinormal mode frequencies match eigenvalue phases, 8 LIGO events)
 1. **Exhibit dimensional structure** (98% from 2D primes, 2% from 3D composites, 0% from higher dimensions)
 1. **Show observer-dependent patterns** (which constants appear "fundamental" depends on measurement scale)
@@ -31,7 +31,7 @@ This repository presents a computational framework demonstrating that the quotie
 - ✅ Ceiling formula: γ_max = 2π × branches / log(m)
 - ✅ 2D lattice dynamics via (residue, carry) tracking
 
-### Empirically Verified (p < 10⁻¹⁰⁰)
+### Empirically Verified (with Null Tests)
 
 - ✅ **100% coverage** of first 250 non-trivial Riemann zeta zeros
 - ✅ **Fixed vs free distinction**: ~33 zeros (fixed) vs ~163 zeros (free), >4x ratio
@@ -78,7 +78,7 @@ pip install numpy scipy matplotlib
 python verification_suite.py
 
 # Expected output: 100% coverage of first 250 Riemann zeros
-# Statistical significance: p < 10⁻¹⁰⁰
+# Key discriminator: matching direction (8x improvement, see Test 9.2)
 ```
 
 ### Critical Implementation Details
@@ -184,7 +184,7 @@ Every concept maps to exact mathematical formulation:
 **Evidence tiers clearly marked:**
 
 - Tier 1: Mathematically proven
-- Tier 2: Empirically verified (p < 10⁻¹⁰⁰)
+- Tier 2: Empirically verified (null tests confirm non-random)
 - Tier 3: Empirically observed (limited testing)
 - Tier 4: Proposed interpretations
 - Tier 5: Speculative conjectures
@@ -249,7 +249,7 @@ The quotient framework provides an independent computational path to the same en
 - Binary switching enables NAND gates
 - Turing completeness from division
 
-✅ **Riemann encoding** (Tier 2: Verified p < 10⁻¹⁰⁰)
+✅ **Riemann encoding** (Tier 2: Verified, 8x direction discriminator)
 
 - 100% coverage of 250 zeros
 - Fixed vs free distinction
@@ -285,7 +285,7 @@ Expected results:
 
 - 2D primes alone: 100% coverage
 - 3D composites with optimal scaling: 100% coverage
-- Statistical significance: p < 10⁻¹⁰⁰
+- Key discriminator: 8x improvement from correct matching direction
 
 -----
 
@@ -294,7 +294,7 @@ Expected results:
 All claims are categorized by evidence strength:
 
 - **ESTABLISHED** = Mathematically proven from definitions
-- **VERIFIED** = Empirically tested with p < 10⁻²⁰
+- **VERIFIED** = Empirically tested with null hypothesis rejection
 - **OBSERVED** = Pattern documented, limited sample
 - **FRAMEWORK** = Organizational model
 - **INTERPRETATION** = Conceptual understanding
@@ -353,7 +353,7 @@ If you use this framework in your research, please cite:
   title={Arithmetic-Is-Computation: Quotient Dynamics from Collatz to Black Holes},
   author={Joshua Christian Elfers},
   year={2025},
-  note={Rigorous computational framework with 100\% Riemann coverage (250 zeros, p < 10^{-100}),
+  note={Rigorous computational framework with 100\% Riemann coverage (250 zeros, null-tested),
         correlations with black hole physics (8 LIGO events), and clear evidence classification},
   url={https://github.com/yourusername/Arithmetic-Is-Computation}
 }

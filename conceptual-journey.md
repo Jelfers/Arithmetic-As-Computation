@@ -162,11 +162,18 @@ Testing different starting positions:
 - Carry accumulates
 - RICH CONNECTION TO RIEMANN ZEROS (~163 zeros, nearly 5x more than fixed)
 
-**Fifth insight: Information lives in motion, not rest.**
+**Fifth insight: Information becomes operationally distinguishable through motion.**
 
-**STATUS: EMPIRICALLY VERIFIED (p < 10⁻¹⁰⁰)**
+**CLARIFICATION ON SYMMETRY AND INFORMATION:**
 
-The target (reaching 1) is dead. The journey (getting there) is alive.
+- Phase 0 represents a *maximally symmetric* state, not absence of information
+- Symmetry ≠ no information; symmetry = no *operational distinctions* inside the system
+- Origin ≠ encoding: information may exist prior to dynamics, but becomes distinguishable only through constraint-breaking (carry accumulation)
+- Inside a computational system, information is defined by operational distinguishability, not origin
+
+**STATUS: EMPIRICALLY VERIFIED**
+
+The fixed point is symmetric (all operations return to it). The free points break symmetry and create distinguishable states. Information ratio: ~5:1 (free:fixed).
 
 **Principle 1: The Journey, Not the Destination**
 
@@ -601,16 +608,18 @@ Does information fall into the singularity and get lost?
 
 **Pattern from quotient framework:**
 
-- Fixed points (singularity analog): ZERO information
-- Free points (horizon analog): ALL information
-- Information ratio: 90,000,000 to 1
+- Fixed points (singularity analog): operationally indistinguishable states
+- Free points (horizon analog): operationally distinguishable states
+- Distinguishability ratio: 90,000,000 to 1
 
 **INTERPRETATION:**
 
 The holographic principle pattern mirrors "journey not destination."
 
-Information doesn't concentrate at the destination (singularity).
-Information concentrates in the journey (dynamics at the horizon).
+*Operational* information (distinguishable states) doesn't concentrate at the destination.
+It concentrates in the journey (dynamics at the horizon).
+
+**Note:** This is about operational accessibility, not metaphysical information content. The singularity may "contain" information, but it becomes indistinguishable inside the system.
 
 **STATUS: OBSERVED PATTERN + PROPOSED INTERPRETATION**
 
@@ -703,9 +712,10 @@ Observable patterns in arithmetic
 - Ceiling formula (smaller beats larger)
 - 2D lattice dynamics are well-defined
 
-**EMPIRICALLY VERIFIED (p < 10⁻¹⁰⁰):**
+**EMPIRICALLY VERIFIED (null tests confirm non-random):**
 
 - 100% coverage of first 250 Riemann zeros
+- Matching direction shows 8x improvement (primary discriminator)
 - Fixed vs free point distinction (~33 vs ~163 zeros, >4x ratio)
 - 2D primes alone achieve 100% with correct matching algorithm
 - 3D composites also achieve 100% with entry-dependent scaling
@@ -735,8 +745,8 @@ Observable patterns in arithmetic
 
 **1. Journey Not Destination**
 
-- Information in motion, not rest
-- STATUS: Empirically verified (p < 10⁻¹⁰⁰)
+- Operational information in motion, not rest
+- STATUS: Empirically verified (5x ratio, fixed vs free)
 
 **2. Smaller Beats Larger**
 
@@ -824,7 +834,7 @@ Collatz conjecture → extended to reals → quotient structure → carry dynami
 **Evidence tiers are clearly marked:**
 
 - Tier 1: Mathematically proven
-- Tier 2: Empirically verified (p < 10⁻¹⁰⁰)
+- Tier 2: Empirically verified (null tests confirm non-random)
 - Tier 3: Empirically observed (limited testing)
 - Tier 4: Proposed interpretations
 - Tier 5: Speculative conjectures
@@ -861,7 +871,7 @@ We kept inverting our expectations when wrong.
 
 **What we established:**
 
-- Quotient structure encodes Riemann zeros (100% coverage for 250 tested, p < 10⁻¹⁰⁰)
+- Quotient structure encodes Riemann zeros (100% coverage for 250 tested, direction discriminator: 8x)
 - Entry-dependent optimal scaling is required
 - Union across dimensions provides completeness (for tested range)
 - Fixed points encode minimal information; free points encode rich information
@@ -930,7 +940,7 @@ Throughout this document, claims are marked with **STATUS:**
 - **MATHEMATICAL FACT:** Proven from axioms/definitions
 - **MATHEMATICALLY PROVEN:** Derived rigorously
 - **MATHEMATICALLY ESTABLISHED:** Well-defined construction
-- **EMPIRICALLY VERIFIED:** Tested with p < 10⁻²⁰ typically
+- **EMPIRICALLY VERIFIED:** Tested with null hypothesis rejection
 - **EMPIRICALLY OBSERVED:** Pattern documented, limited sample
 - **PROPOSED INTERPRETATION:** Conceptual framework
 - **SPECULATIVE CONJECTURE:** Hypothesis requiring proof

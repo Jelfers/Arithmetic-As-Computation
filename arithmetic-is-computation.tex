@@ -74,7 +74,7 @@
 \maketitle
 
 \begin{abstract}
-This document presents a computational framework demonstrating that the quotient in Euclidean division—an intrinsic component of basic arithmetic—creates structures that enable universal computation, completely encode Riemann zeros, and correlate with black hole physics. We document 100\% coverage of the first 250 Riemann zeros ($p < 10^{-100}$) and correlations with 8 LIGO gravitational wave events. The framework suggests that we observe ourselves within a computational structure exhibiting quotient dynamics.
+This document presents a computational framework demonstrating that the quotient in Euclidean division—an intrinsic component of basic arithmetic—creates structures that enable universal computation, completely encode Riemann zeros, and correlate with black hole physics. We document 100\% coverage of the first 250 Riemann zeros (verified with null tests; key discriminator: 8$\times$ improvement from correct matching direction) and correlations with 8 LIGO gravitational wave events. The framework suggests that we observe ourselves within a computational structure exhibiting quotient dynamics.
 \end{abstract}
 
 \tableofcontents
@@ -86,7 +86,7 @@ This framework demonstrates that the quotient in Euclidean division creates intr
 
 \begin{enumerate}
     \item \textbf{Universal Computation:} Enables computation without external programming (Turing completeness via NAND gates).
-    \item \textbf{Riemann Zeros Encoding:} Completely encodes Riemann zeros (100\% coverage of the first 250 zeros, $p < 10^{-100}$).
+    \item \textbf{Riemann Zeros Encoding:} Completely encodes Riemann zeros (100\% coverage of the first 250 zeros, null-tested).
     \item \textbf{Black Hole Physics Correlation:} Correlates with quasinormal mode frequencies matching eigenvalue phases (8 LIGO events).
     \item \textbf{Dimensional Structure:} Exhibits a 98\% coverage from 2D primes, 2\% from 3D composites, and 0\% from higher dimensions.
     \item \textbf{Observer Dependence:} Shows patterns where "fundamental" constants depend on the scale of measurement.
@@ -106,7 +106,7 @@ This framework demonstrates that the quotient in Euclidean division creates intr
 
 % % A diagram illustrating the 2D lattice structure where the x-axis represents the residue (position) and the y-axis represents the carry (time/dynamics), showing how trajectories evolve.
 
-\subsection{Empirically Verified (Tier 2, $p < 10^{-100}$)}
+\subsection{Empirically Verified (Tier 2, Null-Tested)}
 \begin{itemize}
     \item[\cmark] \textbf{100\% coverage} of the first 250 non-trivial Riemann zeta zeros.
     \item[\cmark] \textbf{Fixed vs. Free Distinction:} $\approx 33$ zeros (fixed) vs $\approx 163$ zeros (free), a ratio greater than 4x.
@@ -236,7 +236,7 @@ pip install numpy scipy matplotlib
 # Run all verification tests
 python verification_suite.py
 # Expected: 100% coverage of first 250 Riemann zeros
-# Significance: p < 10^-100
+# Key discriminator: matching direction (8x improvement)
 \end{lstlisting}
 
 \section{Scope and Epistemology}

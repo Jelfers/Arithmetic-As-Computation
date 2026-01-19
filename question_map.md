@@ -115,13 +115,13 @@
 → **ESTABLISHED:** Carry represents temporal evolution (mathematical construction)
 
 **Question 7** led to testing different entry points
-→ **EMPIRICALLY VERIFIED:** Fixed points encode ~33 zeros, free points encode ~163 zeros (>4x ratio, p < 10⁻¹⁰⁰)
+→ **EMPIRICALLY VERIFIED:** Fixed points encode ~33 zeros, free points encode ~163 zeros (>4x ratio)
 
 **Question 8** led to inverting assumptions
 → **ESTABLISHED:** Smaller beats larger (ceiling formula mathematically proven)
 
 **Question 9** led to testing composite numbers
-→ **EMPIRICALLY VERIFIED:** 98/2/0 dimensional split (250 zeros tested, p < 10⁻¹⁰⁰)
+→ **EMPIRICALLY VERIFIED:** 98/2/0 dimensional split (250 zeros tested)
 
 **Question 9.5** led to examining matching direction
 → **CRITICAL METHODOLOGY:** Match zeros to phases (not reverse) - enables 100% coverage
@@ -172,7 +172,7 @@
 → **ESTABLISHED:** All results trace to quotient structure (organizing principle)
 
 **Question 25** led to comprehensive testing
-→ **EMPIRICALLY VERIFIED:** 100% coverage of 250 zeros (p < 10⁻¹⁰⁰)
+→ **EMPIRICALLY VERIFIED:** 100% coverage of 250 zeros (matching direction: 8x discriminator)
 
 **Question 26** led to distilling core patterns
 → **EMPIRICAL PRINCIPLES:** Six patterns identified (documented observations)
@@ -188,7 +188,7 @@
 
 - **From:** Questions 6 & 7
 - **Status:** EMPIRICALLY VERIFIED
-- **Evidence:** Fixed points: ~33 zeros, Free points: ~163 zeros (>4x ratio, p < 10⁻¹⁰⁰)
+- **Evidence:** Fixed points: ~33 zeros, Free points: ~163 zeros (>4x ratio)
 - **Discovery:** Information concentrates in dynamics, not equilibria
 
 ### Principle 2: Smaller Beats Larger
@@ -351,7 +351,7 @@ Q3: Different K? → Memory regions [ESTABLISHED]
 Q4: What is overflow? → Quotient structure [PROVEN]
 Q5: Binary? → Computation emerges [PROVEN]
 Q6: Track both? → Time dimension [ESTABLISHED]
-Q7: Start where? → Fixed vs free (~33 vs ~163 zeros) [VERIFIED p<10⁻¹⁰⁰]
+Q7: Start where? → Fixed vs free (~33 vs ~163 zeros) [VERIFIED]
 Q8: Why smaller? → Ceiling formula [PROVEN + VERIFIED]
 Q9: Dimensions? → 98/2/0 split [VERIFIED for tested range]
 Q9.5: Which way match? → Zeros to phases (not reverse) [CRITICAL METHODOLOGY]
@@ -370,7 +370,7 @@ Q21: Where info? → At boundary [MEASURED 90M:1 ratio]
 Q22: What compute? → Pattern correlation [OBSERVED]
 Q23: RH means? → Information loss? [CONJECTURE]
 Q24: True source? → The quotient [ORGANIZING PRINCIPLE]
-Q25: How sure? → 100% coverage [VERIFIED p<10⁻¹⁰⁰]
+Q25: How sure? → 100% coverage [VERIFIED, 8x direction discriminator]
 Q26: Core patterns? → Six principles [EMPIRICAL PATTERNS]
 Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 ```
@@ -383,7 +383,7 @@ Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 
 - Q1, Q2, Q4, Q5, Q8 (ceiling formula part)
 
-**TIER 2 - EMPIRICALLY VERIFIED (p < 10⁻²⁰):**
+**TIER 2 - EMPIRICALLY VERIFIED (null tests confirm non-random):**
 
 - Q7, Q8 (empirical part), Q9, Q9.5 (methodology), Q25
 
@@ -456,7 +456,7 @@ Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 ## Evidence Classification Legend
 
 - **ESTABLISHED** = Mathematically proven from definitions
-- **VERIFIED** = Empirically tested with p < 10⁻²⁰
+- **VERIFIED** = Empirically tested with null hypothesis rejection
 - **OBSERVED** = Pattern documented, limited sample
 - **FRAMEWORK** = Organizational model
 - **INTERPRETATION** = Conceptual understanding
