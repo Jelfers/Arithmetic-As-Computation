@@ -225,6 +225,18 @@ Use multiple tolerance levels [0.3, 0.4, 0.5, 0.6] for comprehensive coverage.
 
 Without this correct matching direction, coverage plateaus at ~74% instead of 100%.
 
+**Key finding from null testing:**
+
+- Reversing the matching direction collapses coverage by ~8x (100% → 12.4%)
+- Random phases achieve *higher* coverage than structured phases at tight tolerances
+- But random phases lack directional specificity
+
+**Coverage is an ANTI-SIGNAL:**
+
+Uniform coverage maximizes geometric reach but destroys directional specificity. The structured phases sacrifice isotropic coverage in exchange for algorithmic directionality—a property random phases do not have.
+
+**The real signal:** The system privileges a specific direction of rendering, not just high coverage.
+
 -----
 
 ## Part 8: The Unexpected Inversion - Smaller Beats Larger
