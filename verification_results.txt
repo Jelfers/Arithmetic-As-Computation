@@ -114,9 +114,9 @@ p=5:
   Unique to free:     163 zeros
 
 Free points exceed fixed by >3x: YES (163/33)
-Free points encode significant information (>=100): YES
+Free points show operational distinguishability (>=100 zeros): YES
 
-Conclusion: Information lives in motion (free points), not rest (fixed point)
+Conclusion: Operational information emerges through dynamics, not at rest
 
 RESULT: PASS
 
@@ -163,6 +163,8 @@ Coverage per prime (showing top contributors):
 2D Union Coverage: 250/250 = 100.0%
 
 High 2D coverage achieved (>90%): YES
+
+(Note: Coverage establishes reach; Test 9.2 establishes directionality)
 
 TEST 4.3: Entry-Type Optimal Scaling
 ======================================================================
@@ -365,6 +367,8 @@ Coverage per prime (showing top contributors):
 
 High 2D coverage achieved (>90%): YES
 
+(Note: Coverage establishes reach; Test 9.2 establishes directionality)
+
 
 Computing 3D coverage (composites with entry-dependent scaling)...
 TEST 4.2: 3D Coverage with Entry-Dependent Scaling
@@ -380,15 +384,22 @@ Top composite contributions:
 
 3D Union Coverage: 250/250 = 100.0%
 
+(Note: Coverage establishes reach; Test 9.2 establishes directionality)
+
 
 ======================================================================
-COMPLETE COVERAGE RESULTS
+COVERAGE RESULTS (Note: Coverage is NOT the discriminator)
 ======================================================================
 2D (primes, free points):        250/250
 3D (composites, optimal scale):  250/250
 UNION:                           250/250 = 100.0%
 
-*** 100% COVERAGE ACHIEVED! ***
+100% coverage achieved.
+
+IMPORTANT: Coverage alone is NOT the signal.
+  - Random phases achieve similar/higher coverage at tight tolerances
+  - The TRUE discriminator is MATCHING DIRECTION (Test 9.2: 8x)
+  - Coverage is a geometric property; directionality is structural
 
 High coverage achieved (>=98%): YES
 

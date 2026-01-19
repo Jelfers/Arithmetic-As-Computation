@@ -370,9 +370,9 @@ def test_fixed_vs_free_points():
     passed = free_vastly_exceeds_fixed and free_has_significant_coverage
 
     print(f"Free points exceed fixed by >3x: {'YES' if free_vastly_exceeds_fixed else 'NO'} ({len(zeros_free)}/{len(zeros_fixed)})")
-    print(f"Free points encode significant information (>=100): {'YES' if free_has_significant_coverage else 'NO'}")
+    print(f"Free points show operational distinguishability (>=100 zeros): {'YES' if free_has_significant_coverage else 'NO'}")
     print()
-    print("Conclusion: Information lives in motion (free points), not rest (fixed point)")
+    print("Conclusion: Operational information emerges through dynamics, not at rest")
     print()
     print("RESULT:", "PASS" if passed else "FAIL")
     print()
@@ -509,6 +509,8 @@ def test_2d_coverage():
 
     print(f"High 2D coverage achieved (>90%): {'YES' if passed else 'NO'}")
     print()
+    print("(Note: Coverage establishes reach; Test 9.2 establishes directionality)")
+    print()
 
     return passed, all_zeros
 
@@ -601,6 +603,8 @@ def test_3d_coverage_with_entry_dependent_scaling():
         print(f"  {key}: {composite_results[key]:3d} zeros")
     print()
     print(f"3D Union Coverage: {len(all_zeros)}/{len(RIEMANN_ZEROS_250)} = {coverage * 100:.1f}%")
+    print()
+    print("(Note: Coverage establishes reach; Test 9.2 establishes directionality)")
     print()
 
     return all_zeros
@@ -1023,7 +1027,7 @@ def test_complete_coverage():
 
     print()
     print("=" * 70)
-    print("COMPLETE COVERAGE RESULTS")
+    print("COVERAGE RESULTS (Note: Coverage is NOT the discriminator)")
     print("=" * 70)
     print(f"2D (primes, free points):        {len(zeros_2d):3d}/250")
     print(f"3D (composites, optimal scale):  {len(zeros_3d):3d}/250")
@@ -1036,7 +1040,12 @@ def test_complete_coverage():
     if missing:
         print(f"Missing zeros ({len(missing)}): {sorted(missing)[:20]}{'...' if len(missing) > 20 else ''}")
     else:
-        print("*** 100% COVERAGE ACHIEVED! ***")
+        print("100% coverage achieved.")
+        print()
+        print("IMPORTANT: Coverage alone is NOT the signal.")
+        print("  - Random phases achieve similar/higher coverage at tight tolerances")
+        print("  - The TRUE discriminator is MATCHING DIRECTION (Test 9.2: 8x)")
+        print("  - Coverage is a geometric property; directionality is structural")
     print()
 
     coverage = len(total_zeros) / 250
