@@ -453,7 +453,7 @@ Random phases (uniform, same count/tolerance/matching):
 Baseline comparison (1000 trials):
   Random achieves similar coverage — this is EXPECTED (see interpretation)
 
-Structured > Random+2σ: NO
+Structured and random show overlapping coverage distributions at tol=0.3.
 
 INTERPRETATION:
   Random phases ≈ structured phases does NOT invalidate the framework.
