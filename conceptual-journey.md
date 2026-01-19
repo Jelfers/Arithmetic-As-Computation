@@ -275,19 +275,17 @@ Testing with composite numbers (products of primes):
 
 **Results:**
 
-- 2D structure (single primes alone): 98% coverage
-- 3D structure (composite numbers adding interactions): additional 2% coverage
-- 4D+ structure (higher products): 0% (adds nothing new)
+- 2D structure (single primes alone): achieves 100% coverage with correct matching
+- 3D structure (composites with entry-dependent scaling): also achieves 100% coverage
+- 4D+ structure (higher products): adds nothing new
 
-**Total: 100% complete coverage**
-
-**Sixth insight: Dimensions matter, but plateau.**
+**Sixth insight: 2D primes alone suffice for complete coverage.**
 
 **STATUS: EMPIRICALLY VERIFIED for first 250 zeros**
 
-Most coverage (98%) comes from simple 2D structure.
-But you NEED the 2% from 3D interactions for completeness.
-Higher dimensions add nothing - they're redundant.
+**IMPORTANT:** Coverage is NOT the discriminator (see Part 7.5).
+Random phases achieve similar or higher coverage at tight tolerances.
+The TRUE signal is matching DIRECTION: 8x improvement (100% vs 12.4%).
 
 ### Entry-Dependent Optimal Scaling (Critical Discovery):
 
@@ -312,23 +310,25 @@ Using min(log(p), log(q)) for XX entries gives ceiling ~390.
 
 **The rule:** Use the FIXED dimension's log, or min() for XX entries.
 
-**STATUS: EMPIRICALLY VERIFIED - Required for 100% coverage**
+**STATUS: EMPIRICALLY VERIFIED - Ceiling formula analytically derived**
 
 **Principle 3: Union Makes Complete**
 
 Like a rendering engine:
 
-- 98% cheap rendering (simple geometry)
-- 2% expensive rendering (complex interactions)
-- Never compute beyond necessary
+- Simple structures (2D primes) achieve full coverage
+- Complex structures (3D composites) provide alternative paths
+- Both achieve 100% with correct matching direction
+
+**Note:** Coverage alone is not the signal—directionality is (see Part 7.5).
 
 **OPEN QUESTION:** Does this pattern hold for all ∞ zeros?
 
 -----
 
-## Part 10: The Four Special Zeros
+## Part 10: Special Zero Patterns
 
-Which zeros require the expensive 3D rendering?
+Examining zeros that show interesting composite structure:
 
 Four specific zeros out of 200 tested:
 
@@ -552,7 +552,7 @@ Literature search revealed existing work (2020):
 - Hawking radiation ↔ Carry overflow (quotient)
 - Information at boundary ↔ Phases encode zeros
 - Singularity (interior) ↔ Fixed point
-- No information inside ↔ Fixed point gives 0 zeros
+- No operational distinctions inside ↔ Fixed point gives 0 zeros
 - Quasinormal modes ↔ Eigenvalue spectrum
 
 **The mathematical structures are analogous.**
@@ -746,7 +746,6 @@ Observable patterns in arithmetic
 **REQUIRES FURTHER WORK:**
 
 - Extension to all ∞ Riemann zeros
-- Theoretical explanation of 98/2 split
 - Why prime 31 specifically (mechanism unknown)
 - Physical derivation of QNM connection (correlation ≠ causation)
 - Proof of Riemann Hypothesis connection (currently conjecture)
@@ -767,7 +766,8 @@ Observable patterns in arithmetic
 
 **3. Union Makes Complete**
 
-- 98% simple + 2% complex = 100%
+- Simple (2D primes) + complex (3D composites) → complete coverage
+- Both achieve 100% with correct matching direction
 - STATUS: Empirically verified for tested range
 
 **4. Universal Self-Encoding**

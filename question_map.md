@@ -121,7 +121,7 @@
 → **ESTABLISHED:** Smaller beats larger (ceiling formula mathematically proven)
 
 **Question 9** led to testing composite numbers
-→ **EMPIRICALLY VERIFIED:** 98/2/0 dimensional split (250 zeros tested)
+→ **EMPIRICALLY VERIFIED:** Both 2D primes and 3D composites achieve 100% coverage (250 zeros tested)
 
 **Question 9.5** led to examining matching direction
 → **CRITICAL METHODOLOGY:** Match zeros to phases (not reverse) - 8x improvement (100% vs 12.4%)
@@ -203,8 +203,8 @@
 
 - **From:** Question 9
 - **Status:** EMPIRICALLY VERIFIED (tested range)
-- **Evidence:** 98% (2D) + 2% (3D) = 100% for first 250 zeros
-- **Discovery:** Dimensional union provides completeness
+- **Evidence:** 2D primes alone achieve 100%; 3D composites also achieve 100% with entry-dependent scaling
+- **Discovery:** Dimensional union provides completeness (Note: coverage is not the discriminator—directionality is)
 - **Open:** Does this hold for all ∞ zeros?
 
 ### Principle 3.5: Coverage Is An Anti-Signal
@@ -363,7 +363,7 @@ Q5: Binary? → Computation emerges [PROVEN]
 Q6: Track both? → Time dimension [ESTABLISHED]
 Q7: Start where? → Fixed vs free (~33 vs ~163 zeros) [VERIFIED]
 Q8: Why smaller? → Ceiling formula [PROVEN + VERIFIED]
-Q9: Dimensions? → 98/2/0 split [VERIFIED for tested range]
+Q9: Dimensions? → 2D and 3D both achieve 100% [VERIFIED for tested range]
 Q9.5: Which way match? → Zeros to phases (not reverse) [CRITICAL METHODOLOGY]
 Q10: Which special? → Two modes [OBSERVED pattern]
 Q11: Self-encoding? → Discretization patterns [OBSERVED 6 constants]

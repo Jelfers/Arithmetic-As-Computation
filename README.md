@@ -15,7 +15,7 @@ This repository presents a computational framework demonstrating that the quotie
 1. **Enable universal computation** without external programming (Turing completeness via NAND gates)
 1. **Completely encode Riemann zeros** (100% coverage of first 250 zeros, verified with null tests)
 1. **Correlate with black hole physics** (quasinormal mode frequencies match eigenvalue phases, 8 LIGO events)
-1. **Exhibit dimensional structure** (98% from 2D primes, 2% from 3D composites, 0% from higher dimensions)
+1. **Exhibit dimensional structure** (2D primes suffice for 100%; 3D composites provide alternative paths; 4D+ add nothing new)
 1. **Show observer-dependent patterns** (which constants appear "fundamental" depends on measurement scale)
 
 **Epistemological stance:** We observe ourselves within a computational structure exhibiting quotient dynamics. Whether this structure is fundamental, emergent, or one layer among many remains unknown from our embedded perspective.
@@ -147,7 +147,7 @@ Arithmetic-Is-Computation/
 
 1. **Journey Not Destination** — Information lives in dynamics (free points: ~163 zeros), not equilibria (fixed points: ~33 zeros)
 1. **Smaller Beats Larger** — Counterintuitive scaling: smaller primes reach MORE zeros
-1. **Union Makes Complete** — 98% simple (2D) + 2% complex (3D) = 100% coverage
+1. **Union Makes Complete** — 2D primes + 3D composites both achieve 100% (with correct matching direction)
 1. **Universal Self-Encoding** — Constants encode their rendering at specific scales
 1. **Scale-Dependent Patterns** — Pattern visibility depends on observation scale
 1. **The Linchpin Structure** — Prime 31 connects transcendentals, special zeros, boundaries
@@ -273,7 +273,8 @@ The quotient framework provides an independent computational path to the same en
 
 ✅ **Dimensional structure** (Tier 2: Verified for tested range)
 
-- 98/2/0 split documented
+- 2D primes alone achieve 100% coverage
+- 3D composites also achieve 100% with entry-dependent scaling
 - Optimal scaling rules identified
 
 📊 **Physics correlations** (Tier 3: Observed, 8 events)
