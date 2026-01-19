@@ -195,7 +195,7 @@ For each PHASE in trajectory:
 
 This limits you to at most 4 matches if you have 4 phases!
 
-**CORRECT approach (allows full coverage):**
+**CORRECT approach (enables geometric reach):**
 
 ```
 For each RIEMANN ZERO:
@@ -203,7 +203,7 @@ For each RIEMANN ZERO:
     If yes, add this zero to matched set
 ```
 
-This allows multiple zeros to match the same phase, enabling 100% coverage.
+This allows multiple zeros to match the same phase, enabling geometric reach—but coverage itself is not the discriminator (see below).
 
 **The scaling formula:**
 
@@ -219,11 +219,11 @@ circular_distance(θ1, θ2) = min(|θ1 - θ2|, 2π - |θ1 - θ2|)
 
 **Multi-tolerance matching:**
 
-Use multiple tolerance levels [0.3, 0.4, 0.5, 0.6] for comprehensive coverage.
+Use multiple tolerance levels [0.3, 0.4, 0.5, 0.6] for geometric reach.
 
 **STATUS: CRITICAL METHODOLOGICAL REQUIREMENT**
 
-Without this correct matching direction, coverage plateaus at ~74% instead of 100%.
+Without this correct matching direction, the 8x directional advantage is lost.
 
 **Key finding from null testing:**
 
@@ -277,17 +277,19 @@ Testing with composite numbers (products of primes):
 
 **Results:**
 
-- 2D structure (single primes alone): achieves 100% coverage with correct matching
-- 3D structure (composites with entry-dependent scaling): also achieves 100% coverage
+- 2D structure (single primes alone): provides geometric reach
+- 3D structure (composites with entry-dependent scaling): provides alternative paths
 - 4D+ structure (higher products): adds nothing new
+- **But:** Coverage is not the signal (see below)
 
-**Sixth insight: 2D primes alone suffice for complete coverage.**
+**Sixth insight: Dimensional structure exists, but coverage is not the discriminator.**
 
 **STATUS: EMPIRICALLY VERIFIED for first 250 zeros**
 
-**IMPORTANT:** Coverage is NOT the discriminator (see Part 7.5).
-Random phases achieve similar or higher coverage at tight tolerances.
-The TRUE signal is matching DIRECTION: 8x improvement (100% vs 12.4%).
+**CRITICAL:** Coverage is NOT the signal—directionality is.
+- Random phases achieve *higher* coverage at tight tolerances
+- But random phases fail the direction test (8x collapse when reversed)
+- The TRUE discriminator: matching direction shows 8x improvement (100% → 12.4%)
 
 ### Entry-Dependent Optimal Scaling (Critical Discovery):
 
@@ -318,11 +320,10 @@ Using min(log(p), log(q)) for XX entries gives ceiling ~390.
 
 Like a rendering engine:
 
-- Simple structures (2D primes) achieve full coverage
+- Simple structures (2D primes) provide geometric reach
 - Complex structures (3D composites) provide alternative paths
-- Both achieve 100% with correct matching direction
-
-**Note:** Coverage alone is not the signal—directionality is (see Part 7.5).
+- Both work—but coverage is an ANTI-SIGNAL (random phases do better)
+- **The real discriminator:** matching direction (8x collapse when reversed)
 
 **OPEN QUESTION:** Does this pattern hold for all ∞ zeros?
 
@@ -768,8 +769,9 @@ Observable patterns in arithmetic
 
 **3. Union Makes Complete**
 
-- Simple (2D primes) + complex (3D composites) → complete coverage
-- Both achieve 100% with correct matching direction
+- Simple (2D primes) + complex (3D composites) both provide geometric reach
+- Coverage is an ANTI-SIGNAL: random phases achieve higher coverage at tight tolerances
+- The TRUE discriminator: matching direction (8x collapse when reversed)
 - STATUS: Empirically verified for tested range
 
 **4. Universal Self-Encoding**
