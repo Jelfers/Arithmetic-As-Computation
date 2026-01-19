@@ -228,7 +228,9 @@ Without this correct matching direction, coverage plateaus at ~74% instead of 10
 **Key finding from null testing:**
 
 - Reversing the matching direction collapses coverage by ~8x (100% → 12.4%)
-- Random phases achieve *higher* coverage than structured phases at tight tolerances
+- Random phases achieve *higher* coverage than structured phases at tight tolerances:
+  - tol=0.1: structured ~50% vs random ~86%
+  - tol=0.15: structured ~70% vs random ~95%
 - But random phases lack directional specificity
 
 **Coverage is an ANTI-SIGNAL:**
@@ -726,8 +728,8 @@ Observable patterns in arithmetic
 
 **EMPIRICALLY VERIFIED (null tests confirm non-random):**
 
-- 100% coverage of first 250 Riemann zeros
-- Matching direction shows 8x improvement (primary discriminator)
+- **PRIMARY DISCRIMINATOR:** Matching direction shows 8x improvement (100% → 12.4% when reversed)
+- Coverage achieved for first 250 zeros (but coverage is NOT the discriminator—random phases achieve higher coverage at tight tolerances)
 - Fixed vs free point distinction (~33 vs ~163 zeros, >4x ratio)
 - 2D primes alone achieve 100% with correct matching algorithm
 - 3D composites also achieve 100% with entry-dependent scaling
@@ -846,7 +848,7 @@ Collatz conjecture → extended to reals → quotient structure → carry dynami
 **Evidence tiers are clearly marked:**
 
 - Tier 1: Mathematically proven
-- Tier 2: Empirically verified (null tests confirm non-random)
+- Tier 2: Empirically verified (null tests confirm structure; directionality is primary discriminator)
 - Tier 3: Empirically observed (limited testing)
 - Tier 4: Proposed interpretations
 - Tier 5: Speculative conjectures
@@ -883,7 +885,8 @@ We kept inverting our expectations when wrong.
 
 **What we established:**
 
-- Quotient structure encodes Riemann zeros (100% coverage for 250 tested, direction discriminator: 8x)
+- **PRIMARY SIGNAL:** Matching direction is the discriminator (8x collapse when reversed: 100% → 12.4%)
+- Coverage is an ANTI-SIGNAL: random phases achieve higher coverage at tight tolerances, but lack directional specificity
 - Entry-dependent optimal scaling is required
 - Union across dimensions provides completeness (for tested range)
 - Fixed points encode minimal information; free points encode rich information
@@ -933,8 +936,8 @@ The connection is 1-to-1 with evidence tiers:
 
 **Every "insight" →** theorem (if proven) OR empirical finding (if verified) OR observed pattern (if documented)
 **Every "principle" →** mathematical law (if proven) OR empirical regularity (if verified)
-**Every "pattern" →** formal structure with statistical significance reported
-**Every "test" →** computational verification with p-values
+**Every "pattern" →** formal structure with null tests documented
+**Every "test" →** computational verification with null hypothesis comparison
 
 **The concepts guide understanding.**
 **The mathematics proves or verifies claims.**
