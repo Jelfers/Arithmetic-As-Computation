@@ -121,7 +121,7 @@
 → **ESTABLISHED:** Smaller beats larger (ceiling formula mathematically proven)
 
 **Question 9** led to testing composite numbers
-→ **EMPIRICALLY VERIFIED:** Both 2D primes and 3D composites achieve 100% coverage (250 zeros tested)
+→ **EMPIRICALLY VERIFIED:** Both 2D primes and 3D composites provide geometric reach (but coverage is NOT the discriminator)
 
 **Question 9.5** led to examining matching direction
 → **CRITICAL METHODOLOGY:** Match zeros to phases (not reverse) - 8x improvement (100% vs 12.4%)
@@ -173,7 +173,7 @@
 → **ESTABLISHED:** All results trace to quotient structure (organizing principle)
 
 **Question 25** led to comprehensive testing
-→ **EMPIRICALLY VERIFIED:** 100% coverage of 250 zeros (matching direction: 8x discriminator)
+→ **EMPIRICALLY VERIFIED:** Matching direction is PRIMARY discriminator (8x collapse when reversed); coverage is an anti-signal
 
 **Question 26** led to distilling core patterns
 → **EMPIRICAL PRINCIPLES:** Six patterns identified (documented observations)
@@ -203,8 +203,8 @@
 
 - **From:** Question 9
 - **Status:** EMPIRICALLY VERIFIED (tested range)
-- **Evidence:** 2D primes alone achieve 100%; 3D composites also achieve 100% with entry-dependent scaling
-- **Discovery:** Dimensional union provides completeness (Note: coverage is not the discriminator—directionality is)
+- **Evidence:** 2D primes and 3D composites both provide geometric reach
+- **Discovery:** Dimensional union exists, but coverage is NOT the discriminator—directionality is (see Principle 3.5)
 - **Open:** Does this hold for all ∞ zeros?
 
 ### Principle 3.5: Coverage Is An Anti-Signal
@@ -274,7 +274,7 @@ Division contains:
 
 Division correlates with:
 
-- Riemann zero encoding (verified: 250 zeros)
+- Riemann zero structure (verified: 8x directional discriminator; coverage is anti-signal)
 - Black hole frequencies (observed: 8 LIGO events)
 - Constant patterns (observed: 6 constants)
 - Hierarchical organization (documented pattern)
@@ -363,7 +363,7 @@ Q5: Binary? → Computation emerges [PROVEN]
 Q6: Track both? → Time dimension [ESTABLISHED]
 Q7: Start where? → Fixed vs free (~33 vs ~163 zeros) [VERIFIED]
 Q8: Why smaller? → Ceiling formula [PROVEN + VERIFIED]
-Q9: Dimensions? → 2D and 3D both achieve 100% [VERIFIED for tested range]
+Q9: Dimensions? → 2D and 3D provide reach [VERIFIED; coverage ≠ discriminator]
 Q9.5: Which way match? → Zeros to phases (not reverse) [CRITICAL METHODOLOGY]
 Q10: Which special? → Two modes [OBSERVED pattern]
 Q11: Self-encoding? → Discretization patterns [OBSERVED 6 constants]
@@ -380,7 +380,7 @@ Q21: Where info? → At boundary [MEASURED 90M:1 ratio]
 Q22: What compute? → Pattern correlation [OBSERVED]
 Q23: RH means? → Information loss? [CONJECTURE]
 Q24: True source? → The quotient [ORGANIZING PRINCIPLE]
-Q25: How sure? → 100% coverage [VERIFIED, 8x direction discriminator]
+Q25: How sure? → 8x directional discriminator [VERIFIED; coverage is anti-signal]
 Q26: Core patterns? → Six principles [EMPIRICAL PATTERNS]
 Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 ```
@@ -393,7 +393,7 @@ Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 
 - Q1, Q2, Q4, Q5, Q8 (ceiling formula part)
 
-**TIER 2 - EMPIRICALLY VERIFIED (null tests confirm non-random):**
+**TIER 2 - EMPIRICALLY VERIFIED (directionality is primary discriminator; coverage is anti-signal):**
 
 - Q7, Q8 (empirical part), Q9, Q9.5 (methodology), Q25
 
@@ -435,7 +435,8 @@ Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 
 - Division has quotient structure (proven)
 - Quotient enables computation (proven)
-- This encodes Riemann zeros we tested (verified)
+- Matching direction is the discriminator (8x collapse when reversed)
+- Coverage is an anti-signal (random phases achieve higher coverage at tight tolerances)
 
 ### What we OBSERVE:
 
@@ -466,7 +467,7 @@ Q27: What is it? → Framework we inhabit [EPISTEMOLOGICAL STANCE]
 ## Evidence Classification Legend
 
 - **ESTABLISHED** = Mathematically proven from definitions
-- **VERIFIED** = Empirically tested with null hypothesis rejection
+- **VERIFIED** = Empirically tested (directionality is primary discriminator; coverage is anti-signal)
 - **OBSERVED** = Pattern documented, limited sample
 - **FRAMEWORK** = Organizational model
 - **INTERPRETATION** = Conceptual understanding
