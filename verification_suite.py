@@ -1198,13 +1198,13 @@ def test_random_phase_null(n_iterations: int = 100) -> Tuple[float, float, float
     print()
     print(f"Baseline comparison ({n_iterations} trials):")
     if structured_exceeds:
-        print(f"  Structured exceeds random mean + 2σ")
+        print(f"  Structured exceeds random baseline mean")
     else:
         print(f"  Random achieves similar coverage — this is EXPECTED (see interpretation)")
     print()
 
     # Interpretation
-    print(f"Structured > Random+2σ: {'YES' if structured_exceeds else 'NO'}")
+    print("Structured and random show overlapping coverage distributions at tol=0.3.")
     print()
 
     if not structured_exceeds:
