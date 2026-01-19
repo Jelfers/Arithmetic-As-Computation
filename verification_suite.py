@@ -365,12 +365,12 @@ def test_fixed_vs_free_points():
     # Free points have rich dynamics (multiple phases) and encode more information
     # The ratio demonstrates that information lives in the DYNAMICS
     free_vastly_exceeds_fixed = len(zeros_free) > len(zeros_fixed) * 3
-    free_has_significant_coverage = len(zeros_free) >= 100  # Free points should get many zeros
+    free_has_meaningful_coverage = len(zeros_free) >= 100  # Free points should get many zeros
 
-    passed = free_vastly_exceeds_fixed and free_has_significant_coverage
+    passed = free_vastly_exceeds_fixed and free_has_meaningful_coverage
 
     print(f"Free points exceed fixed by >3x: {'YES' if free_vastly_exceeds_fixed else 'NO'} ({len(zeros_free)}/{len(zeros_fixed)})")
-    print(f"Free points show operational distinguishability (>=100 zeros): {'YES' if free_has_significant_coverage else 'NO'}")
+    print(f"Free points show operational distinguishability (>=100 zeros): {'YES' if free_has_meaningful_coverage else 'NO'}")
     print()
     print("Conclusion: Operational information emerges through dynamics, not at rest")
     print()
@@ -1394,7 +1394,7 @@ def test_wrong_scaling_null() -> Tuple[float, float]:
     print()
     print("NOTE: Empirical coverage may appear similar at loose tolerances due to")
     print("chance matches with sparse phases. The theoretical ceiling difference")
-    print("becomes significant for systematic coverage of ALL zeros.")
+    print("becomes meaningful for systematic coverage of ALL zeros.")
     print()
 
     # Return the coverage for tracking (use ceiling-based metric)
