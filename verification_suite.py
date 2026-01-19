@@ -1058,7 +1058,7 @@ def test_complete_coverage():
 
 
 # =============================================================================
-# SECTION 9: ADVERSARIAL NULL TESTS
+# SECTION 9: ADVERSARIAL BASELINE TESTS
 # =============================================================================
 
 # Pre-registered parameters (printed at run start)
@@ -1093,7 +1093,7 @@ def print_preregistered_parameters():
     print(f"Max carry: {PREREGISTERED_PARAMS['max_carry']}")
     print(f"K (multiplier): {PREREGISTERED_PARAMS['K']}")
     print(f"Matching direction: {PREREGISTERED_PARAMS['matching_direction']}")
-    print(f"Null test iterations: {PREREGISTERED_PARAMS['null_iterations']}")
+    print(f"Baseline test iterations: {PREREGISTERED_PARAMS['null_iterations']}")
     print()
 
 
@@ -1123,10 +1123,11 @@ def find_matching_zeros_wrong_direction(phases: np.ndarray, log_m: float,
 
 def test_random_phase_null(n_iterations: int = 100) -> Tuple[float, float, float]:
     """
-    NULL TEST 9.1: Random phase null hypothesis.
+    TEST 9.1: Random Phase Baseline (Coverage Geometry Check).
 
     Under IDENTICAL matching direction (zeros->phases) and tolerance,
     compare structured phases from Collatz dynamics vs uniform random phases.
+    This is a baseline comparison, not a hypothesis test. No statistical inference is performed.
 
     CRITICAL INTERPRETATION:
     - Coverage at tol >= 0.3 is NOT a discriminating metric because:
@@ -1136,7 +1137,7 @@ def test_random_phase_null(n_iterations: int = 100) -> Tuple[float, float, float
     - If random ~= structured: coverage is geometric, not structural
     - The key discriminator is MATCHING DIRECTION (Test 9.2: 8x difference)
     """
-    print("TEST 9.1: Random Phase Null (Coverage Geometry Check)")
+    print("TEST 9.1: Random Phase Baseline (Coverage Geometry Check)")
     print("=" * 70)
 
     # Use primes where structure should matter (not trivially 100%)
@@ -1167,7 +1168,7 @@ def test_random_phase_null(n_iterations: int = 100) -> Tuple[float, float, float
     print(f"  Avg phases per trajectory: {avg_phase_count}")
     print()
 
-    # Run null: same phase count, same tolerance, same matching direction
+    # Run baseline: same phase count, same tolerance, same matching direction
     # Only difference: phases are uniform random instead of structured
     null_coverages = []
     random.seed(42)  # Reproducibility
@@ -1195,7 +1196,7 @@ def test_random_phase_null(n_iterations: int = 100) -> Tuple[float, float, float
     print(f"  Std:  {null_std*100:.2f}%")
     print(f"  Range: [{null_min*100:.1f}%, {null_max*100:.1f}%]")
     print()
-    print(f"Null comparison ({n_iterations} trials):")
+    print(f"Baseline comparison ({n_iterations} trials):")
     if structured_exceeds:
         print(f"  Structured exceeds random mean + 2σ")
     else:
@@ -1275,13 +1276,13 @@ def test_random_phase_null(n_iterations: int = 100) -> Tuple[float, float, float
     print()
 
     # Test passes if comparison was computed (informational)
-    # The key output is the null comparison, not a p-value
+    # The key output is the baseline comparison, not a p-value
     return real_coverage, null_mean
 
 
 def test_wrong_direction_null() -> Tuple[float, float]:
     """
-    NULL TEST 9.2: Wrong matching direction — PRIMARY DISCRIMINATOR.
+    TEST 9.2: Wrong Matching Direction — PRIMARY DISCRIMINATOR.
 
     Compare correct (zeros->phases) vs wrong (phases->zeros) matching.
 
@@ -1338,7 +1339,7 @@ def test_wrong_direction_null() -> Tuple[float, float]:
 
 def test_wrong_scaling_null() -> Tuple[float, float]:
     """
-    NULL TEST 9.3: Wrong scaling null - demonstrates theoretical ceiling difference.
+    TEST 9.3: Wrong Scaling Baseline - demonstrates theoretical ceiling difference.
 
     The scaling formula γ_max = 2π × branches / log(m) shows that:
     - Smaller log → higher ceiling → more zeros reachable
@@ -1406,7 +1407,7 @@ def test_wrong_scaling_null() -> Tuple[float, float]:
 
 def test_tolerance_sensitivity() -> Dict[float, float]:
     """
-    NULL TEST 9.4: Tolerance sensitivity sweep.
+    TEST 9.4: Tolerance Sensitivity Sweep.
 
     Show coverage vs tolerance to ensure result isn't artifact of specific tolerance.
     """
@@ -1449,7 +1450,7 @@ def test_tolerance_sensitivity() -> Dict[float, float]:
 
 def test_scaling_jitter() -> Dict[str, float]:
     """
-    NULL TEST 9.5: Scaling jitter test.
+    TEST 9.5: Scaling Jitter Test.
 
     Apply small perturbations to log(p) to test stability.
     """
@@ -1593,27 +1594,27 @@ def test_phase_multiplicity() -> Dict:
 
 def run_adversarial_tests() -> Dict[str, bool]:
     """
-    Run all adversarial null tests.
+    Run all adversarial baseline tests.
     """
     print("\n")
     print("=" * 70)
-    print(" SECTION 9: ADVERSARIAL NULL TESTS")
+    print(" SECTION 9: ADVERSARIAL BASELINE TESTS")
     print("=" * 70)
     print()
 
     results = {}
 
-    # 9.1: Random phase null (informational - documents comparison)
-    real_cov, null_mean = test_random_phase_null(n_iterations=PREREGISTERED_PARAMS['null_iterations'])
+    # 9.1: Random phase baseline (informational - documents comparison)
+    real_cov, baseline_mean = test_random_phase_null(n_iterations=PREREGISTERED_PARAMS['null_iterations'])
     # This is an informational test - the finding is documented regardless of outcome
     # The key discriminator is matching direction (9.2), not random vs structured phases
     results['9.1'] = True  # Informational test always passes
 
-    # 9.2: Wrong direction null
+    # 9.2: Wrong direction baseline
     correct_cov, wrong_cov = test_wrong_direction_null()
     results['9.2'] = correct_cov > wrong_cov * 1.2
 
-    # 9.3: Wrong scaling null
+    # 9.3: Wrong scaling baseline
     optimal_cov, wrong_scale_cov = test_wrong_scaling_null()
     results['9.3'] = optimal_cov > wrong_scale_cov
 
@@ -1760,7 +1761,7 @@ def run_all_verification_tests():
         print(" ALL CORE TESTS PASSED - RUNNING ADVERSARIAL TESTS")
         print("=" * 70)
 
-        # Section 9: Adversarial Null Tests (only if all core tests pass)
+        # Section 9: Adversarial Baseline Tests (only if all core tests pass)
         adversarial_results = run_adversarial_tests()
         for test_id, passed in sorted(adversarial_results.items()):
             results[test_id] = passed
