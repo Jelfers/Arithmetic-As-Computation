@@ -1,3 +1,111 @@
+########################################
+# Python / Computation
+########################################
+
+# Bytecode / cache
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+########################################
+# Experiment / Verification Artifacts
+########################################
+
+# Temporary or large randomized outputs
+random_trials/
+null_trials/
+baseline_trials/
+monte_carlo/
+sweeps/
+experiments/
+scratch/
+tmp/
+
+# Adversarial / stress-test outputs
+stress_tests/
+jitter_runs/
+phase_scrambles/
+
+# Keep *final* verification results tracked
+!verification_results.txt
+!verification_suite_results.txt
+
+########################################
+# LaTeX / PDF Build Artifacts
+########################################
+
+# Core LaTeX junk
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+
+# Bibliography build artifacts
+*.bbl
+*.blg
+
+# Editor backup files
+*.bak
+*.sav
+
+########################################
+# PDFs
+########################################
+
+# Generated PDFs (source .tex is authoritative)
+*.pdf
+
+# If you EVER want to track a final release PDF, explicitly whitelist it:
+#!Directional-Encoding-In-Arithmetic-Quotient-Dynamics.pdf
+
+########################################
+# Jupyter / Interactive
+########################################
+
+.ipynb_checkpoints/
+
+########################################
+# IDEs / Editors
+########################################
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+########################################
+# OS Noise
+########################################
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+########################################
+# Git / Merge Safety
+########################################
+
+*.orig
+*.rej
